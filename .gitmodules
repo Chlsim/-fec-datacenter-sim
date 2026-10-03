@@ -1,0 +1,3 @@
+[submodule "htsim"]
+	path = htsim
+	url = https://github.com/Chlsim/csg-htsim.git

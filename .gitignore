@@ -1,0 +1,20 @@
+# htsim build artifacts (should stay inside the htsim/ submodule, but just in case)
+*.o
+*.a
+logout.dat
+
+# run outputs
+logs/*.dat
+logs/*.log
+logs/*.tmp
+!logs/.gitkeep
+
+# python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# simulation run artifacts
+idmap.txt
