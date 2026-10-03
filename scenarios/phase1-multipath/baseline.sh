@@ -37,8 +37,10 @@ TXTLOG=../../logs/phase1_baseline_${TAG}.txt
 echo "=== stdout log: $TXTLOG ==="
 echo '--- per-flow completion (FCT) ---'
 grep 'finished' "$TXTLOG" || echo '(no flow finished within -end window)'
-echo '--- loss/retransmit summary ---'
-grep -E 'New:|Rtx:|Bounced:' "$TXTLOG" | tail -1
+echo '--- loss/retransmit summary (aggregate) ---'
+grep 'Bounced:' "$TXTLOG"
+echo '--- per-path stats (New/Rtx/Rto per path, per flow) ---'
+grep -A2 '^ndpsrc' "$TXTLOG"
 echo
 echo "=== binary log: $BINLOG ==="
 "$PARSE" "$BINLOG" -ndp -show
